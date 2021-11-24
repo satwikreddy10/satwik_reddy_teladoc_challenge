@@ -1,4 +1,4 @@
-# Gathering locators for the elements in the page
+# Gathering locators for the elements in the login page
 # Using page object model
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select

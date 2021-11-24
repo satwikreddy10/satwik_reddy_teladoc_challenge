@@ -9,12 +9,15 @@ from data import data_Amazon
 
 class Automation(unittest.TestCase):
 
-    # test case to validate 5% off on eligible subscribe and save items
-    def test_subscribe_and_save_price(self):
-
+    def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.get(data_Amazon.url)
         self.driver.maximize_window()
+
+    # test case to validate 5% off on eligible subscribe and save items
+    # order will not be placed as it is a production environment
+    # validating the confirm subscription button
+    def test_subscribe_and_save_price(self):
 
         amazon = Amazon(self.driver)
         amazon.click_accounts_link()
@@ -40,10 +43,6 @@ class Automation(unittest.TestCase):
 
     # test case to validate fields under Subscribe and Save link
     def test_subscribe_and_save_page_navigation(self):
-
-        self.driver = webdriver.Chrome()
-        self.driver.get(data_Amazon.url)
-        self.driver.maximize_window()
 
         amazon = Amazon(self.driver)
         amazon.click_accounts_link()

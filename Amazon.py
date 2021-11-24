@@ -1,4 +1,4 @@
-# Gathering locators for the elements in the page
+# Gathering locators for the elements to place the order
 # Using page object model
 import time
 
@@ -68,6 +68,7 @@ class Amazon():
     def wait_for_page_load(self):
         WebDriverWait(self.driver, 50).until(
             lambda driver: driver.execute_script('return document.readyState') == 'complete')
+        # as amazon.com has products changing everyday a small wait to load the page is necessary
         time.sleep(3)
 
 
